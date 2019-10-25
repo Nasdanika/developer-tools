@@ -118,7 +118,7 @@
 					<skipAssembly>false</skipAssembly>
 					<outputDirectory>${project.build.directory}/site</outputDirectory>
 					<formats>zip</formats>
-					<finalName>nasdanika-tool-suite-source</finalName>
+					<finalName>nasdanika-developer-tools-source</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 					<descriptors>
 						<descriptor>src/assembly/workspace.xml</descriptor>

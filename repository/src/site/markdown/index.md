@@ -6,7 +6,7 @@ Third-party tools for Nasdanika developers.
 * [Archived repository](org.nasdanika.developer.tools.repository-2019.10.01-SNAPSHOT.zip)
 * Binaries:
     * [Windows x64](nasdanika-developer-tools-2019-10-01-win32-x86_64.zip).
-* [Source](developer-tools-source.zip) - Eclipse project to build locally or use as a template for your own tool suite.
+* [Source](nasdanika-developer-tools-source.zip) - Eclipse project to build locally or use as a template for your own tool suite.
 
 
 ## Features
