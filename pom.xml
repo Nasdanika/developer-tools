@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.nasdanika.developer.tools</groupId>
+	<artifactId>org.nasdanika.developer.tools.parent</artifactId>
+	<version>2019.10.01-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<!-- tycho requires maven >= 3.0 -->
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+
+	<properties>
+		<tycho-version>1.4.0</tycho-version>
+	</properties>
+
+	<repositories>
+
+		<!-- configure p2 repository to resolve against -->
+		<repository>
+			<id>foundation</id>
+			<url>https://www.nasdanika.org/master/foundation-repository</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>tycho-configurator</id>
+			<url>http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/0.9.0.201811261502/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>third-party</id>
+			<url>https://www.nasdanika.org/master/products/third-party/repository</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>maven-osgi</id>
+			<url>https://www.nasdanika.org/master/products/maven-osgi/repository</url>
+			<layout>p2</layout>
+		</repository>
+		
+	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-site-plugin</artifactId>
+			    <version>3.7.1</version>
+			    <configuration>
+			        <skip>true</skip>
+			        <skipDeploy>true</skipDeploy>
+			    </configuration>
+			</plugin>		
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+				    <skipAssembly>true</skipAssembly>
+				</configuration>
+			</plugin>			
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-document-bundle-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>			
+			<plugin>
+				<!-- enable tycho build extension -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+					<!-- configure the p2 target environments for multi-platform build -->
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+			<!-- enable source bundle generation -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.0.0</version>
+
+				<configuration>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>	
+	
+	<modules>
+
+		<module>feature</module>
+		<module>repository</module>
+
+	</modules>
+	<name>Nasdanika Developer Tools</name>
+	<url>https://www.nasdanika.org/${env.CIRCLE_BRANCH}/products/developer-tools</url>
+	<organization>
+		<name>Nasdanika LLC</name>
+		<url>http://www.nasdanika.org</url>
+	</organization>
+	<scm>
+		<url>https://github.com/Nasdanika/developer-tools</url>
+	</scm>
+</project>
