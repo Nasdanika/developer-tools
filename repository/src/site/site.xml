@@ -22,7 +22,11 @@
    </menu>
 -->
  
-   <footer><![CDATA[All rights reserved.]]></footer>
+   <footer>
+	Build ${env.CIRCLE_BUILD_NUM}.${git.branch}.${git.commit} 
+	&nbsp;&bull;&nbsp;
+	All rights reserved
+   </footer>
  
   </body>    
  
