@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nasdanika.developer.tools</groupId>
 	<artifactId>org.nasdanika.developer.tools.parent</artifactId>
-	<version>2019.10.01-SNAPSHOT</version>
+	<version>2020.01.01-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<!-- tycho requires maven >= 3.0 -->
@@ -22,7 +22,7 @@
 		<!-- configure p2 repository to resolve against -->
 		<repository>
 			<id>foundation</id>
-			<url>https://www.nasdanika.org/master/foundation-repository</url>
+			<url>https://www.nasdanika.org/${env.CIRCLE_BRANCH}/foundation-repository</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>

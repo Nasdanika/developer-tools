@@ -17,6 +17,7 @@
         <exclude>*.jar</exclude>
         <exclude>.git/**</exclude>
         <exclude>.circleci/**</exclude>
+        <exclude>apache-maven-*</exclude>
       </excludes>
     </fileSet>
   </fileSets>
