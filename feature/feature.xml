@@ -38,11 +38,11 @@
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.rse.feature.group"
+         id="org.eclipse.rse"
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.tm.terminal.feature.feature.group"
+         id="org.eclipse.tm.terminal.feature"
          version="0.0.0"/>
 
 </feature>
