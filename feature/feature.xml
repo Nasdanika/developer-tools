@@ -37,4 +37,12 @@
          id="org.eclipse.wb.rcp.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.eclipse.rse.feature.group"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.tm.terminal.feature.feature.group"
+         version="0.0.0"/>
+
 </feature>
