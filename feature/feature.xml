@@ -44,5 +44,17 @@
    <includes
          id="org.eclipse.tm.terminal.feature"
          version="0.0.0"/>
-
+         
+   <includes
+         id="org.eclipse.sirius.samples"
+         version="0.0.0"/>
+         
+   <includes
+         id="org.eclipse.sirius.specifier.properties.feature"
+         version="0.0.0"/>
+         
+   <includes
+         id="org.eclipse.sirius.specifier"
+         version="0.0.0"/>
+         
 </feature>
